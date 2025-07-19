@@ -1,0 +1,128 @@
+.educational-material-container {
+  font-family: var(--heading-font);
+  color: var(--text-color);
+  background: var(--background-color);
+  padding: 0;
+}
+
+.educational-material-banner {
+  height: 200px;
+  background-color: black;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding-top: 60px;
+  color: white;
+}
+
+.educational-material-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.educational-material-subtitle {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.educational-material-box {
+  max-width: 800px;
+  margin: -80px auto 80px auto;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  border-radius: 20px;
+  padding: 40px 30px;
+  font-family: var(--heading-font);
+  color: var(--text-color);
+}
+
+.educational-material-box .intro-text,
+.educational-material-box .closing-note {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.educational-material-box .section-heading {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 28px;
+  margin-bottom: 12px;
+  color: #004c45;
+}
+
+.educational-material-box .styled-bullets {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+
+.educational-material-box .styled-bullets li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.educational-material-box .styled-bullets li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 8px;
+  height: 8px;
+  background-color: #004c45;
+  border-radius: 50%;
+}
+
+
+@media (max-width: 768px) {
+  .educational-material-banner {
+    height: 160px;
+    padding-top: 50px;
+    text-align: center;
+  }
+
+  .educational-material-title {
+    font-size: 26px;
+    padding: 0 12px;
+    margin-top: 65px;
+  }
+
+  .educational-material-subtitle {
+    font-size: 13px;
+    padding: 0 12px;
+  }
+
+  .educational-material-box {
+    margin: -30px 10px 60px 10px;
+    padding: 30px 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .educational-material-box .intro-text,
+  .educational-material-box .closing-note {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    text-align: justify;
+  }
+
+  .educational-material-box .section-heading {
+    font-size: 1.05rem;
+    margin-top: 24px;
+    margin-bottom: 10px;
+  }
+
+  .educational-material-box .styled-bullets {
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .educational-material-box .styled-bullets li {
+    padding-left: 20px;
+    font-size: 14px;
+    text-align: justify;
+  }
+}

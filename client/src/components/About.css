@@ -1,0 +1,132 @@
+.about-container {
+  font-family: var(--heading-font);
+  color: var(--text-color);
+  background: var(--background-color);
+  padding: 0;
+}
+
+.about-banner {
+  height: 200px;
+  background-image: url('../images/about.jpg');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding-top: 60px;
+  color: white;
+}
+
+.about-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.about-subtitle {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.about-box {
+  max-width: 800px;
+  margin: -80px auto 80px auto;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  border-radius: 20px;
+  padding: 40px 30px;
+  font-family: var(--heading-font);
+  color: var(--text-color);
+}
+
+.intro-text,
+.closing-note {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.section-heading {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 28px;
+  margin-bottom: 12px;
+  color: #004c45;
+}
+
+.styled-bullets {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+
+.styled-bullets li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.styled-bullets li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 8px;
+  height: 8px;
+  background-color: #004c45;
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .about-banner {
+    height: 160px;
+    padding-top: 130px;
+    background-position: center;
+    text-align: center;
+  }
+
+  .about-title {
+    font-size: 24px;
+    margin-bottom: 0px;
+    text-align: center;
+  }
+
+  .about-subtitle {
+    font-size: 13px;
+    opacity: 0.9;
+    text-align: center;
+  }
+
+  .about-box {
+    padding: 24px 18px;
+    margin: -40px auto 60px auto;
+    border-radius: 16px;
+    max-width: 87%;
+  }
+
+  .intro-text,
+  .closing-note {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    text-align: justify;
+  }
+
+  .section-heading {
+    font-size: 1.05rem;
+    margin-top: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .styled-bullets li {
+    font-size: 14px;
+    line-height: 1.6;
+    padding-left: 20px;
+    margin-bottom: 10px;
+  }
+
+  .styled-bullets li::before {
+    top: 8px;
+    width: 7px;
+    height: 7px;
+  }
+}

@@ -1,0 +1,681 @@
+/* === src/styles/Home.css === */
+.services-wrapper,
+.focus-wrapper {
+  background: rgba(255, 255, 255, 0.6); /* Translucent white */
+  backdrop-filter: blur(10px);         /* Actual blur effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+}
+
+/* === Root Color Variables: Medical Palette (Option F) === */
+:root {
+  --primary-color: #008080;          /* Deep Turquoise */
+  --secondary-color: #f0ebe3;        /* Soft Beige */
+  --background-color: #fcfcfc;       /* Warm White */
+  --text-color: #2f4f4f;             /* Dark Slate Gray */
+  --hover-color: #006666;            /* Pine Green */
+  --card-title-color: #008080;
+  --card-text-color: #4d4d4d;
+  --dark: #0f0f0f;                   /* Header/Footer Black */
+  --heading-font: 'Poppins', sans-serif;
+}
+
+/* === Base Styles === */
+body {
+
+  margin: 0;
+  padding: 0;
+  background: #ffffff;  
+  color: var(--text-color);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  font-family: var(--heading-font), 'Inter', sans-serif;
+  font-weight: 500; /* base boldness */
+}
+/* === Navbar === */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background-color: var(--dark);
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 24px;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+/* Remove bullets and spacing */
+.nav-links,
+.nav-links li,
+.dropdown-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Dropdown Styles */
+.nav-links .dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+.nav-links .dropdown .dropdown-menu {
+  position: absolute;
+  top: 100%; /* directly below the button */
+  left: 0;
+  margin-top: 8px;
+  background: rgba(255, 255, 255, 0.75); /* translucent white */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 10px 0;
+  border-radius: 4px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+  z-index: 999;
+  display: none; /* default hidden, JS will toggle */
+}
+
+.nav-links .dropdown-menu li a {
+  font-weight: bold;
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 10px 20px;
+  display: block;
+  transition: 0.2s ease;
+}
+
+.nav-links .dropdown-menu li a:hover {
+  color: var(--primary-color);
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Dropdown toggle button */
+.dropdown button.nav-link {
+  background: none;
+  border: none;
+  color: white;
+  font: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+}
+
+/* Link styling */
+.nav-links li a.nav-link {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-links li a.nav-link:hover {
+  color: var(--primary-color);
+}
+
+.nav-links .dropdown > .nav-link {
+  all: unset; /* removes default button styles */
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.3s, background-color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  
+}
+
+
+.nav-links .dropdown > .nav-link:hover,
+.nav-links .dropdown > .nav-link.open {
+  color: var(--primary-color);
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+}
+
+
+/* Caret Icon */
+.fas.fa-caret-down {
+  font-size: 12px;
+}
+
+/* Social Media Icons */
+.social-icons {
+  display: flex;
+  gap: 14px;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: var(--primary-color);
+}
+/* === Button Styles === */
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--hover-color);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  padding: 12px 26px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-ghost:hover {
+  background-color: rgba(0, 128, 128, 0.1); /* slightly transparent turquoise */
+}
+
+
+/* === Zoom-in Animation === */
+@keyframes bgZoomIn {
+  from {
+    transform: scale(1.05);
+    opacity: 0.3;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+
+/* === Why Us Section === */
+.why-us-section {
+  background: var(--background-color);
+  padding: 80px 20px;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.why-us-section h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.why-text {
+  max-width: 700px;
+  margin: auto;
+  font-size: 18px;
+  color: var(--card-text-color);
+}
+
+/* === Footer === */
+.footer {
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 30px 0;
+  font-size: 14px;
+  margin-top: 60px;
+}
+
+.nav-links li a.nav-link {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-links li a.nav-link:hover {
+  color: var(--primary-color);
+}
+
+.social-icons a:hover {
+  color: var(--primary-color);
+}
+
+.services-section {
+  padding: 20px 20px;
+  text-align: center;
+  background: #ffffff;  
+}
+
+.services-section .subheading {
+  color: #d35400;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.services-section h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: var(--dark);
+}
+
+
+.services-wrapper {
+  background: rgba(255, 255, 255, 0.6); /* translucent white */
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 40px 30px;
+  margin: 40px auto;
+  max-width: 1200px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.services-cards {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.service-card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.service-card img {
+  width: 100%;
+  height: 50%;
+  border-radius: 12px;
+  margin-bottom: 18px;
+}
+
+.service-card h3 {
+  margin-bottom: 12px;
+  font-size: 20px;
+  color: var(--primary-color);
+}
+
+.service-card p {
+  font-size: 14px;
+  color: var(--text-color);
+  margin-bottom: 20px;
+}
+
+.service-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+/* ========== Focus Section ========== */
+.focus-section {
+  padding: 15px 20px;
+  background: #ffffff;  
+}
+
+.focus-wrapper {
+  background: rgba(255, 255, 255, 0.6); /* translucent white */
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 50px 40px;
+  margin: 40px auto;
+  max-width: 1200px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.focus-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.focus-image img {
+  max-width: 480px;
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.focus-text {
+  max-width: 500px;
+  text-align: left;
+}
+
+.focus-text .subheading {
+  color: var(--hover-color);
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.focus-text h2 {
+  color: var(--dark);
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.focus-text .description {
+  color: var(--text-color);
+  font-size: 16px;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.focus-text .btn-primary {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.focus-text .btn-primary:hover {
+  background-color: var(--hover-color);
+}
+
+
+/* === Customized & Targeted Approach === */
+.target-approach-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 100px 20px;
+  background-color: #000; /* fallback */
+  
+}
+
+.target-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+.target-overlay {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+  color: white;
+  
+}
+
+.target-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+  padding: 0 10px;
+}
+
+.target-header h2 {
+  font-size: 36px;
+  color: white;
+}
+
+.target-header {
+  padding: 10px 20px;
+}
+
+.target-cards {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 24px;
+  flex-wrap: nowrap;        /* <== Important: prevents wrapping */
+  margin-top: 40px;
+}
+
+
+.target-card {
+  background-color: rgba(255, 255, 255, 0.92);
+  color: var(--text-color);
+  width: 260px;
+  border-radius: 8px;
+  padding: 24px 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s;
+  text-align: center;
+}
+
+.target-card h4 {
+  color: var(--primary-color);
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.target-card img {
+  width: 60px;
+  height: 60px;
+  margin: 12px 0;
+  object-fit: contain;
+}
+
+.target-card p {
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.card-btn {
+  padding: 8px 18px;
+  font-size: 14px;
+}
+
+.services-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+/* Mobile Navbar (only visible on small screens) */
+@media (max-width: 768px) {
+  .mobile-navbar-wrapper {
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+  }
+
+  .mobile-navbar {
+  background-color: #0f0f0f;
+  padding: 10px 16px;
+  transition: max-height 0.19s ease-in-out;  /* 💡 Smooth open/close */
+  max-height: 60px;                         /* 🟢 Collapsed state */
+  overflow: hidden;                         /* Hides dropdown during collapse */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.mobile-navbar.expanded {
+  max-height: 500px; /* 🟢 Adjust as per total menu height */
+}
+
+  .mobile-navbar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .mobile-navbar .logo {
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  .hamburger {
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: white;
+    cursor: pointer;
+  }
+
+  .mobile-menu {
+    margin-top: 14px;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(8px);
+    border-radius: 8px;
+    padding: 16px;
+    text-align: justify;
+  }
+
+  .mobile-menu li {
+    list-style: none;
+  }
+
+  .mobile-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    display: block;
+    padding: 4px 0;
+    transition: color 0.3s;
+  }
+
+  .mobile-menu a:hover {
+    color: var(--primary-color);
+  }
+
+  .mobile-social-icons {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+    justify-content: flex-start;
+  }
+
+  .mobile-social-icons a {
+    color: white;
+    font-size: 18px;
+  }
+.mobile-dropdown .dropdown-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+
+  .dropdown-list {
+    padding-left: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 4px;
+  }
+
+  .dropdown-list li {
+    list-style: none;
+  }
+
+  .dropdown-list a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 2px 0;
+  }
+
+  .dropdown-list a:hover {
+    color: var(--primary-color);
+  }
+
+
+/* === Mobile Services Section === */
+.services-section {
+  padding: 40px 16px;
+}
+
+.services-section h2 {
+  font-size: 26px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.services-wrapper {
+  padding: 24px 16px;
+  margin: 10px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+}
+
+.services-cards {
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.service-card {
+  width: 90%;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.service-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.service-card img {
+  height: auto;
+  max-height: 180px;
+  object-fit: cover;
+}
+
+}
