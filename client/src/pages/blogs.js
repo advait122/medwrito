@@ -11,7 +11,7 @@ function Blogs() {
   const sectionRefs = useRef([]);
 
   useEffect(() => {
-    axios.get('/api/blogs')
+    axios.get('https://medwrito.onrender.com/api/blogs')
       .then(response => {
         console.log('Fetched blogs:', response.data);
         const sortedBlogs = response.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));

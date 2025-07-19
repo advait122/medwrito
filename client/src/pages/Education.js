@@ -10,7 +10,7 @@ const Education = () => {
   useEffect(() => {
     const fetchEducations = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/educations'); // Replace with your server IP
+        const res = await axios.get('https://medwrito.onrender.com/api/educations'); // Replace with your server IP
         setEducations(res.data);
       } catch (err) {
         setError('Failed to fetch education content');
