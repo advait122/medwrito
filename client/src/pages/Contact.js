@@ -61,7 +61,7 @@ const Contact = () => {
           transition={{ delay: 0.3, duration: 0.6 }}
         >
           <h3>Mailing Address</h3>
-          <p>MedWrito</p>
+          <p>Medwrito Research PVT. LTD.</p>
           <p>
             Survey no 28 A,<br />
             Opp. Ganesh Park Society,<br />
@@ -70,7 +70,7 @@ const Contact = () => {
             Pune, Maharashtra 411013
           </p>
           <p>Phone: +91-7822858036</p>
-          <p>Email: MedWrito@gmail.com</p>
+          <p>Email: Medwrito@gmail.com</p>
 
           <iframe
   title="Google Map"

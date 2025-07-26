@@ -90,12 +90,12 @@ const Navbar = () => {
   </a>
 
   <a
-    href="#"
-    target="_blank"
-    rel="noreferrer"
-  >
-    <i className="fab fa-facebook"></i>
-  </a>
+  href="https://wa.me/message/MOEYRF5TXKJLJ1"
+  target="_blank"
+  rel="noreferrer"
+>
+  <i className="fab fa-whatsapp"></i>
+</a>
 </div>
 
       </div>
