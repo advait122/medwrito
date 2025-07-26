@@ -31,7 +31,7 @@ const Education = () => {
    
   </div>
       {error && <p>{error}</p>}
-      {educations.length === 0 && <p>No education materials available.</p>}
+      {educations.length === 0 && <p>loading material...</p>}
 
       <div className="education-grid">
         {educations.map((edu, index) => (
